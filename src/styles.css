@@ -1,0 +1,127 @@
+@import '@fontsource-variable/fredoka/wght.css';
+
+:root {
+  /* One reference px at the current card width; used inside .card only (cqw). */
+  --u: calc(100cqw / var(--ref-width));
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--page-bg);
+  font-family: var(--font-family);
+  -webkit-text-size-adjust: 100%;
+  touch-action: manipulation;
+}
+
+.stage {
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: max(var(--card-margin), env(safe-area-inset-top));
+  padding-right: max(var(--card-margin), env(safe-area-inset-right));
+  padding-bottom: max(var(--card-margin), env(safe-area-inset-bottom));
+  padding-left: max(var(--card-margin), env(safe-area-inset-left));
+}
+
+.card {
+  position: relative;
+  container-type: inline-size;
+  width: 100%;
+  max-width: var(--card-max-width);
+  height: 100%;
+  max-height: calc(var(--card-max-width) * var(--ref-height) / var(--ref-width));
+  overflow: hidden;
+  border-radius: var(--card-radius);
+  background: var(--card-bg);
+  color: var(--card-ink);
+  font-weight: var(--font-weight);
+  letter-spacing: var(--letter-spacing);
+  line-height: var(--line-height);
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+
+.card__decor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.card__shape {
+  position: absolute;
+  background: var(--card-tint);
+}
+
+.card__shape--ring {
+  background: transparent;
+  border-style: solid;
+  border-color: var(--card-tint);
+}
+
+.card__body {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.card__body--question {
+  padding: calc(var(--question-pad-y) * var(--u)) calc(var(--question-pad-x) * var(--u));
+}
+
+.card__body--text {
+  padding: 0 calc(var(--start-pad-x) * var(--u));
+}
+
+.card__question {
+  margin: 0;
+  width: 100%;
+  font-size: calc(var(--question-size) * var(--fit, 1) * var(--u));
+}
+
+.card__column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card__label {
+  margin: 0;
+  font-size: calc(var(--start-label-size) * var(--u));
+}
+
+.card__title {
+  margin: 0;
+  font-size: calc(var(--start-title-size) * var(--u));
+}
+
+.card__hint {
+  margin: calc(var(--start-hint-gap) * var(--u)) 0 0;
+  font-size: calc(var(--start-hint-size) * var(--u));
+  letter-spacing: 0;
+}
+
+.card__counter {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(var(--counter-bottom) * var(--u));
+  text-align: center;
+  font-size: calc(var(--counter-size) * var(--u));
+}
+
+/* Fixed copy should wrap on words, never mid-word. */
+.card__label,
+.card__title,
+.card__hint {
+  hyphens: manual;
+}

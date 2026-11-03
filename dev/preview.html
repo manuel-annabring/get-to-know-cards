@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Card preview (dev only)</title>
+    <style>
+      .grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        padding: 24px;
+      }
+      .cell {
+        width: calc(var(--ref-width) * 1px);
+        height: calc(var(--ref-height) * 1px);
+        flex: none;
+      }
+      .cell .card {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="grid" class="grid"></div>
+    <script type="module" src="/dev/preview.ts"></script>
+  </body>
+</html>

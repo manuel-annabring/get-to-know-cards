@@ -1,13 +1,13 @@
 # Status
 
-Current phase: Phase 1, Playable deck (slice 0 done, slice 1.1 next)
-Branch: main
-Next action: Create branch phase/1-playable-deck, then slice 1.1
+Current phase: Phase 1, Playable deck (slices 0 and 1.1 done, 1.2 next)
+Branch: phase/1-playable-deck
+Next action: Slice 1.2
 
 | Slice | Name | Status | Commit |
 |---|---|---|---|
 | 0 | Setup | done | 69fbe3a |
-| 1.1 | Card look | pending | |
+| 1.1 | Card look | done | HASH |
 | 1.2 | Deck engine | pending | |
 | 1.3 | Content v1 | pending | |
 | 1.4 | Wire-up and interaction | pending | |
