@@ -7,7 +7,7 @@ Next action: Slice 1.2
 | Slice | Name | Status | Commit |
 |---|---|---|---|
 | 0 | Setup | done | 69fbe3a |
-| 1.1 | Card look | done | HASH |
+| 1.1 | Card look | done | 34c1169 |
 | 1.2 | Deck engine | pending | |
 | 1.3 | Content v1 | pending | |
 | 1.4 | Wire-up and interaction | pending | |
