@@ -163,16 +163,67 @@ Acceptance criteria:
 - [ ] a full game through the dev server in the browser pane: screenshots of the first card, a middle card, the end card
 - [ ] no console errors or warnings
 
-## 5. Phase 2: Installable and shareable (sketch)
+## 5. Phase 2: Quick deploy
 
-Detailed after the Phase 1 review.
+Goal: Manuel opens a public URL on his phone and plays with a group (first real try: the day after the Phase 1 review). Everything that is not needed for that moves to Phase 3.
 
-- 2.1 PWA: manifest, service worker, offline play, installable on the home screen
-- 2.2 App icon (see the `icon-brief` skill)
-- 2.3 "How to play" screen: three short sentences, reachable from the start card
-- 2.4 Static deployment build. **Publishing is a stop**: Manuel picks the host and the domain.
+Hosting decision (Manuel, 2026-11-04): GitHub Pages from a public repo `manuel-annabring/get-to-know-cards`, deployed by a GitHub Action on every push to `main`. The site lives at `https://manuel-annabring.github.io/get-to-know-cards/`, so the build must work under a sub-path. Before the first push the local history is rewritten to the GitHub noreply email, so the personal email does not become public.
 
-## 6. Backlog (not planned)
+### Slice 2.1: Production build for a sub-path
+Goal:            `dist/` works when served from any path, with a proper page title and favicon
+Scope:           `vite.config.ts` (`base: './'`), `index.html` (title, description, theme-color), `public/favicon.svg`
+Out of scope:    PWA, manifest, service worker, home-screen icons, analytics, any game change
+Depends on:      Phase 1
+Taste-critical:  no
+Acceptance criteria:
+- [ ] typecheck, lint, build, tests pass
+- [ ] `dist/index.html` and the built CSS and JS contain no absolute asset paths (no `src="/`, `href="/`, `url(/`)
+- [ ] `dist/` copied to a temp folder under `get-to-know-cards/` and served by a static server (for example `python3 -m http.server`) plays correctly at `http://localhost:<port>/get-to-know-cards/`: start card, a few cards, end card at 390x844; the font loads from the served `dist` (network log), no console errors or warnings
+- [ ] the same works at the root path (`vite preview`)
+- [ ] `dev/` is not in `dist/`
+- [ ] `<title>` is "Welche Frage war das?", a short German `description` and a `theme-color` taken from the first palette colour are set; the favicon shows in the tab
+- [ ] no console errors or warnings
+
+### Slice 2.2: Repo files and deploy workflow
+Goal:            the repository is ready to be published, and every push to `main` deploys to Pages
+Scope:           `.github/workflows/deploy.yml`, `README.md`, `.gitignore` check
+Out of scope:    creating the remote, pushing, enabling Pages (that is slice 2.3), licence, issue templates
+Depends on:      slice 2.1
+Taste-critical:  no
+Acceptance criteria:
+- [ ] the workflow runs on push to `main` and on manual dispatch, installs with `npm ci`, runs `npm run check`, uploads `dist/` with the official Pages actions (`actions/configure-pages`, `actions/upload-pages-artifact`, `actions/deploy-pages`, `actions/checkout`, `actions/setup-node`, each pinned to a major version), and sets the `pages: write` and `id-token: write` permissions only on the deploy job
+- [ ] the workflow file passes a YAML syntax check
+- [ ] `README.md` (English, short): what the game is, how to play in three sentences, how to run it locally, the live URL, and a note that card content is German
+- [ ] no secrets, tokens, personal paths or personal email in any tracked file (`git grep` for `icloud`, `/Users/`, `token`)
+- [ ] `npm run check` passes
+
+### Slice 2.3: First deploy (run by the coordinator, outward-facing)
+Goal:            the game is live on the Pages URL
+Scope:           git history rewrite to the noreply email (before the first push only), merging the phase branches into `main`, creating the public repo, pushing, enabling Pages, updating the commit hashes in STATUS.md and REVIEW-phase-1.md
+Depends on:      slices 2.1, 2.2
+Acceptance criteria:
+- [ ] before the rewrite a backup tag or branch exists and the rewrite only changes author and committer identity; trees are identical (`git diff <backup> HEAD` is empty)
+- [ ] `main` contains all of Phase 1 and Phase 2; the working tree is clean
+- [ ] public repo `manuel-annabring/get-to-know-cards` exists with the full history; `git log --format=%ae` shows only the noreply address
+- [ ] Pages is enabled with the workflow build type, and the Actions run for the push succeeds (status read with `gh run`)
+- [ ] the live URL in the browser pane at 390x844: start card, a few cards, console clean, the font served from the site
+- [ ] STATUS.md has the URL
+
+Stop conditions specific to this slice: Pages cannot be enabled for the account or repo type, the Action fails twice, or any step would need credentials.
+
+## 6. Phase 3: Installable and polish (sketch)
+
+Detailed after Manuel has played the game with a group.
+
+- PWA: manifest, service worker, offline play, installable on the home screen (needs `vite-plugin-pwa`, already approved)
+- App icon (see the `icon-brief` skill)
+- "How to play" screen: three short sentences, reachable from the start card
+- Better slide feel (Manuel: fine for now, improve later)
+- More variety in the pairs: 17 of 24 pairs were "like / dislike"; add first/last, past/future, real/wish
+- Review leftovers: end card and last card can share a colour, small-text contrast on the red, teal and pink cards, tap-lock timer slack, German strings in `dev/preview.ts`
+- Licence for the repo, custom domain
+
+## 7. Backlog (not planned)
 
 - Categories or intensity levels ("light" / "deeper")
 - More languages (content modules already allow it)

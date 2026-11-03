@@ -1,8 +1,10 @@
 # Status
 
-Current phase: Phase 1, Playable deck (all slices done, review fixes applied)
-Branch: phase/1-playable-deck
-Next action: Phase 2 kickoff
+Current phase: Phase 2, Quick deploy (not started). Phase 1 was reviewed by Manuel and accepted with fixes (slice 1.5 done).
+Branch: phase/2-deploy (based on phase/1-playable-deck; merged into `main` in slice 2.3)
+Next action: Slice 2.1
+
+## Phase 1 (done)
 
 | Slice | Name | Status | Commit |
 |---|---|---|---|
@@ -13,17 +15,28 @@ Next action: Phase 2 kickoff
 | 1.4 | Wire-up and interaction | done | ad4b500 |
 | 1.5 | Review fixes (font weight, two questions) | done | 6e686f3 |
 
+Note: commit hashes change when the history is rewritten to the noreply email in slice 2.3. STATUS.md and REVIEW-phase-1.md are updated then.
+
+## Phase 2 (quick deploy)
+
+| Slice | Name | Status | Commit |
+|---|---|---|---|
+| 2.1 | Production build for a sub-path | pending | |
+| 2.2 | Repo files and deploy workflow | pending | |
+| 2.3 | First deploy (coordinator) | pending | |
+
 ## Blockers
 
-None. The repository has no remote, so the branch is not pushed.
+None. The repository has no remote yet (created in slice 2.3).
 
 ## Gotchas
 
 - Slice 0 is collaborative-light: it decides the commands and how Claude sees the result. Run it before kicking off the phase.
 - Slice 1.1 and 1.4 are taste-critical. Criteria are "matches the mockup and `theme.ts` values", not "Manuel likes it".
-- Phase 2 is only a sketch in SPEC.md. Detail it after the Phase 1 review.
+- Phase 3 is only a sketch in SPEC.md. Detail it after Manuel has played with a group.
+- Port 5173 is held by a dev server Manuel started in his own terminal; `preview_start` may land on another port. Use `localhost:5173` directly or `vite preview` on 4173 for the production build.
 
 ## Notes (outside the phase)
 
 - Idea: App icon via the `icon-brief` skill (Phase 2).
-- Reviewer findings for the fix slice (details in REVIEW-phase-1.md section 5): iOS tap on `document` click (check on a real phone), last card and end card share a colour, tap-lock timer slack, small-text contrast on red, teal and pink, German strings in `dev/preview.ts`, content flags.
+- Reviewer leftovers moved to Phase 3 in SPEC.md: end card colour, small-text contrast, tap-lock timer slack, German strings in `dev/preview.ts`, more variety in the pairs.
