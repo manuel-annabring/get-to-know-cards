@@ -78,6 +78,21 @@ export const startCard = {
 export const startLook = { colorIndex: 0, layoutIndex: 0 } as const;
 export const endLook = { colorIndex: 2, layoutIndex: 3 } as const;
 
+/** Card change. Slide in from the right; the old card moves left and shrinks while it is covered. */
+export const transition = {
+  durationMs: 380,
+  easing: 'cubic-bezier(.2, .8, .2, 1)',
+  /** The new card starts this far right of its resting place, in percent of the card width (plus the margin). */
+  enterFrom: 100,
+  /** The old card moves left by this share of its width, in percent. */
+  exitShift: -20,
+  exitScale: 0.95,
+  /** `prefers-reduced-motion: reduce`: a short crossfade instead of the slide. */
+  reducedFadeMs: 150,
+  /** The lock is released this long after the nominal end even if no animation event arrives. */
+  fallbackSlackMs: 120,
+} as const;
+
 /** Corner radius: ref px, or a percentage of the shape. */
 export type Corner = number | `${number}%`;
 
@@ -160,5 +175,11 @@ export function cssVariables(): Record<string, string> {
     '--start-title-size': String(startCard.titleSize),
     '--start-hint-size': String(startCard.hintSize),
     '--start-hint-gap': String(startCard.hintGap),
+    '--transition-duration': `${transition.durationMs}ms`,
+    '--transition-easing': transition.easing,
+    '--transition-enter-from': `${transition.enterFrom}%`,
+    '--transition-exit-shift': `${transition.exitShift}%`,
+    '--transition-exit-scale': String(transition.exitScale),
+    '--transition-fade-duration': `${transition.reducedFadeMs}ms`,
   };
 }

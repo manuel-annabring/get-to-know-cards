@@ -1,5 +1,14 @@
 import { describe, expect, it } from 'vitest';
-import { decorLayouts, endLook, palette, questionFontSize, questionLook, startLook } from './theme';
+import {
+  cssVariables,
+  decorLayouts,
+  endLook,
+  palette,
+  questionFontSize,
+  questionLook,
+  startLook,
+  transition,
+} from './theme';
 
 function luminance(hex: string): number {
   const channels = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255);
@@ -56,5 +65,20 @@ describe('questionFontSize', () => {
     expect(questionFontSize(25)).toBe(36);
     expect(questionFontSize(36)).toBe(36);
     expect(questionFontSize(37)).toBe(32);
+  });
+});
+
+describe('transition', () => {
+  it('matches the spec and reaches the CSS variables', () => {
+    expect(transition.durationMs).toBe(380);
+    expect(transition.easing).toBe('cubic-bezier(.2, .8, .2, 1)');
+    expect(transition.exitScale).toBe(0.95);
+    const vars = cssVariables();
+    expect(vars['--transition-duration']).toBe('380ms');
+    expect(vars['--transition-exit-shift']).toBe('-20%');
+  });
+
+  it('keeps the reduced-motion fade short', () => {
+    expect(transition.reducedFadeMs).toBeLessThan(transition.durationMs / 2);
   });
 });

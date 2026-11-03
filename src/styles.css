@@ -17,14 +17,36 @@ body {
   font-family: var(--font-family);
   -webkit-text-size-adjust: 100%;
   touch-action: manipulation;
+  overscroll-behavior: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  overflow: hidden;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 .stage {
   height: 100vh;
   height: 100dvh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  /* Old and new card share the one grid cell while they slide. */
+  display: grid;
+  grid-template: minmax(0, 1fr) / minmax(0, 1fr);
+  place-items: center;
+  overflow: hidden;
   padding-top: max(var(--card-margin), env(safe-area-inset-top));
   padding-right: max(var(--card-margin), env(safe-area-inset-right));
   padding-bottom: max(var(--card-margin), env(safe-area-inset-bottom));
@@ -32,6 +54,7 @@ body {
 }
 
 .card {
+  grid-area: 1 / 1;
   position: relative;
   container-type: inline-size;
   width: 100%;
@@ -124,4 +147,58 @@ body {
 .card__title,
 .card__hint {
   hyphens: manual;
+}
+
+/* Card change. Timings, easing and distances come from theme.ts (--transition-*). */
+.card--in,
+.card--out {
+  animation-duration: var(--transition-duration);
+  animation-timing-function: var(--transition-easing);
+  animation-fill-mode: both;
+  pointer-events: none;
+}
+
+.card--in.card--slide {
+  animation-name: card-slide-in;
+}
+
+.card--out.card--slide {
+  animation-name: card-slide-out;
+}
+
+.card--fade {
+  animation-duration: var(--transition-fade-duration);
+  animation-timing-function: linear;
+}
+
+.card--in.card--fade {
+  animation-name: card-fade-in;
+}
+
+.card--out.card--fade {
+  animation-name: card-fade-out;
+}
+
+@keyframes card-slide-in {
+  from {
+    transform: translateX(calc(var(--transition-enter-from) + var(--card-margin)));
+  }
+}
+
+@keyframes card-slide-out {
+  to {
+    transform: translateX(var(--transition-exit-shift)) scale(var(--transition-exit-scale));
+  }
+}
+
+@keyframes card-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes card-fade-out {
+  to {
+    opacity: 0;
+  }
 }

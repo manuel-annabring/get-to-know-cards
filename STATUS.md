@@ -1,8 +1,8 @@
 # Status
 
-Current phase: Phase 1, Playable deck (slices 0, 1.1, 1.2 and 1.3 done, 1.4 next)
+Current phase: Phase 1, Playable deck (slices 0, 1.1, 1.2, 1.3 and 1.4 done)
 Branch: phase/1-playable-deck
-Next action: Slice 1.4
+Next action: Phase 1 review
 
 | Slice | Name | Status | Commit |
 |---|---|---|---|
@@ -10,7 +10,7 @@ Next action: Slice 1.4
 | 1.1 | Card look | done | 34c1169 |
 | 1.2 | Deck engine | done | 2eab9ce |
 | 1.3 | Content v1 | done | e339056 |
-| 1.4 | Wire-up and interaction | pending | |
+| 1.4 | Wire-up and interaction | done | HASH |
 
 ## Blockers
 
