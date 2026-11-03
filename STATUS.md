@@ -1,8 +1,8 @@
 # Status
 
-Current phase: Phase 2, Quick deploy (slice 2.1 done). Phase 1 was reviewed by Manuel and accepted with fixes (slice 1.5 done).
+Current phase: Phase 2, Quick deploy (slices 2.1 and 2.2 done). Phase 1 was reviewed by Manuel and accepted with fixes (slice 1.5 done).
 Branch: phase/2-deploy (based on phase/1-playable-deck; merged into `main` in slice 2.3)
-Next action: Slice 2.2
+Next action: Slice 2.3, run by the coordinator
 
 ## Phase 1 (done)
 
@@ -22,7 +22,7 @@ Note: commit hashes change when the history is rewritten to the noreply email in
 | Slice | Name | Status | Commit |
 |---|---|---|---|
 | 2.1 | Production build for a sub-path | done | 2131dfa |
-| 2.2 | Repo files and deploy workflow | pending | |
+| 2.2 | Repo files and deploy workflow | done | pending |
 | 2.3 | First deploy (coordinator) | pending | |
 
 ## Blockers
