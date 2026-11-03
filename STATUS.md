@@ -1,8 +1,8 @@
 # Status
 
-Current phase: Phase 1, Playable deck (slices 0, 1.1, 1.2, 1.3 and 1.4 done)
+Current phase: Phase 1, Playable deck (all slices done, waiting for Manuel's review)
 Branch: phase/1-playable-deck
-Next action: Phase 1 review
+Next action: Manuel reviews REVIEW-phase-1.md, then a small fix slice for the agreed items, then merge `phase/1-playable-deck` into `main`, then detail Phase 2 in SPEC.md
 
 | Slice | Name | Status | Commit |
 |---|---|---|---|
@@ -14,7 +14,7 @@ Next action: Phase 1 review
 
 ## Blockers
 
-None.
+None. The repository has no remote, so the branch is not pushed.
 
 ## Gotchas
 
@@ -25,3 +25,4 @@ None.
 ## Notes (outside the phase)
 
 - Idea: App icon via the `icon-brief` skill (Phase 2).
+- Reviewer findings for the fix slice (details in REVIEW-phase-1.md section 5): iOS tap on `document` click (check on a real phone), last card and end card share a colour, tap-lock timer slack, small-text contrast on red, teal and pink, German strings in `dev/preview.ts`, content flags.
