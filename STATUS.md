@@ -9,7 +9,7 @@ Next action: Slice 1.4
 | 0 | Setup | done | 69fbe3a |
 | 1.1 | Card look | done | 34c1169 |
 | 1.2 | Deck engine | done | 2eab9ce |
-| 1.3 | Content v1 | done | HASH |
+| 1.3 | Content v1 | done | e339056 |
 | 1.4 | Wire-up and interaction | pending | |
 
 ## Blockers
