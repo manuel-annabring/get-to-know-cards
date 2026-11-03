@@ -52,11 +52,11 @@ One commit per slice (each followed by a small commit that only records its hash
 
 | Slice | Commit |
 |---|---|
-| 0 Setup (on `main`) | `69fbe3a` |
-| 1.1 Card look | `34c1169` |
-| 1.2 Deck engine | `2eab9ce` |
-| 1.3 Content v1 | `e339056` |
-| 1.4 Wire-up and interaction | `ad4b500` |
+| 0 Setup (on `main`) | `6f711d3` |
+| 1.1 Card look | `c5ec998` |
+| 1.2 Deck engine | `a7dacea` |
+| 1.3 Content v1 | `35b4410` |
+| 1.4 Wire-up and interaction | `37e77c6` |
 
 ## 5. Open issues
 

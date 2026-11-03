@@ -8,12 +8,12 @@ Next action: Slice 2.3, run by the coordinator
 
 | Slice | Name | Status | Commit |
 |---|---|---|---|
-| 0 | Setup | done | 69fbe3a |
-| 1.1 | Card look | done | 34c1169 |
-| 1.2 | Deck engine | done | 2eab9ce |
-| 1.3 | Content v1 | done | e339056 |
-| 1.4 | Wire-up and interaction | done | ad4b500 |
-| 1.5 | Review fixes (font weight, two questions) | done | 6e686f3 |
+| 0 | Setup | done | 6f711d3 |
+| 1.1 | Card look | done | c5ec998 |
+| 1.2 | Deck engine | done | a7dacea |
+| 1.3 | Content v1 | done | 35b4410 |
+| 1.4 | Wire-up and interaction | done | 37e77c6 |
+| 1.5 | Review fixes (font weight, two questions) | done | 5dacd74 |
 
 Note: commit hashes change when the history is rewritten to the noreply email in slice 2.3. STATUS.md and REVIEW-phase-1.md are updated then.
 
@@ -21,8 +21,8 @@ Note: commit hashes change when the history is rewritten to the noreply email in
 
 | Slice | Name | Status | Commit |
 |---|---|---|---|
-| 2.1 | Production build for a sub-path | done | 2131dfa |
-| 2.2 | Repo files and deploy workflow | done | e67e5ef |
+| 2.1 | Production build for a sub-path | done | 9d6d173 |
+| 2.2 | Repo files and deploy workflow | done | 6336ef5 |
 | 2.3 | First deploy (coordinator) | pending | |
 
 ## Blockers
