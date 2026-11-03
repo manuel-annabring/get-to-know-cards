@@ -1,8 +1,9 @@
 # Status
 
-Current phase: Phase 2, Quick deploy (slices 2.1 and 2.2 done). Phase 1 was reviewed by Manuel and accepted with fixes (slice 1.5 done).
-Branch: phase/2-deploy (based on phase/1-playable-deck; merged into `main` in slice 2.3)
-Next action: Slice 2.3, run by the coordinator
+Current phase: Phase 2, Quick deploy (done, waiting for Manuel's group test)
+Branch: main (phase branches are merged; history was rewritten to the noreply email before the first push)
+Live: https://manuel-annabring.github.io/get-to-know-cards/ (repo: https://github.com/manuel-annabring/get-to-know-cards)
+Next action: Manuel plays with a group, then we detail Phase 3 in SPEC.md from what he saw
 
 ## Phase 1 (done)
 
@@ -15,19 +16,19 @@ Next action: Slice 2.3, run by the coordinator
 | 1.4 | Wire-up and interaction | done | 37e77c6 |
 | 1.5 | Review fixes (font weight, two questions) | done | 5dacd74 |
 
-Note: commit hashes change when the history is rewritten to the noreply email in slice 2.3. STATUS.md and REVIEW-phase-1.md are updated then.
+Hashes are those after the identity rewrite (the pre-rewrite history is in the local tag `backup-pre-noreply`).
 
-## Phase 2 (quick deploy)
+## Phase 2 (quick deploy, done)
 
 | Slice | Name | Status | Commit |
 |---|---|---|---|
 | 2.1 | Production build for a sub-path | done | 9d6d173 |
 | 2.2 | Repo files and deploy workflow | done | 6336ef5 |
-| 2.3 | First deploy (coordinator) | pending | |
+| 2.3 | First deploy (coordinator) | done | 3d38563 |
 
 ## Blockers
 
-None. The repository has no remote yet (created in slice 2.3).
+None.
 
 ## Gotchas
 
