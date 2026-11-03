@@ -22,7 +22,7 @@ Note: commit hashes change when the history is rewritten to the noreply email in
 | Slice | Name | Status | Commit |
 |---|---|---|---|
 | 2.1 | Production build for a sub-path | done | 2131dfa |
-| 2.2 | Repo files and deploy workflow | done | pending |
+| 2.2 | Repo files and deploy workflow | done | e67e5ef |
 | 2.3 | First deploy (coordinator) | pending | |
 
 ## Blockers
