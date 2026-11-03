@@ -6,7 +6,7 @@ Next action: Create branch phase/1-playable-deck, then slice 1.1
 
 | Slice | Name | Status | Commit |
 |---|---|---|---|
-| 0 | Setup | done | HASH |
+| 0 | Setup | done | 69fbe3a |
 | 1.1 | Card look | pending | |
 | 1.2 | Deck engine | pending | |
 | 1.3 | Content v1 | pending | |
