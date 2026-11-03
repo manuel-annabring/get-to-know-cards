@@ -10,7 +10,7 @@ Next action: Phase 1 review
 | 1.1 | Card look | done | 34c1169 |
 | 1.2 | Deck engine | done | 2eab9ce |
 | 1.3 | Content v1 | done | e339056 |
-| 1.4 | Wire-up and interaction | done | HASH |
+| 1.4 | Wire-up and interaction | done | ad4b500 |
 
 ## Blockers
 
