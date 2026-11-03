@@ -11,7 +11,7 @@ Next action: Phase 2 kickoff
 | 1.2 | Deck engine | done | 2eab9ce |
 | 1.3 | Content v1 | done | e339056 |
 | 1.4 | Wire-up and interaction | done | ad4b500 |
-| 1.5 | Review fixes (font weight, two questions) | done | HASH |
+| 1.5 | Review fixes (font weight, two questions) | done | 6e686f3 |
 
 ## Blockers
 
