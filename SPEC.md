@@ -61,7 +61,7 @@ All tweakable look values live in this one module. Components import from it and
 | Palette "Bonbon" (bg / ink) | `#F0543C` / `#FFFFFF`, `#FFB627` / `#2A1650`, `#0E9F8E` / `#FFFFFF`, `#6C4BE8` / `#FFFFFF`, `#E8387F` / `#FFFFFF`, `#2F6FED` / `#FFFFFF` |
 | Decor shape tint | white at 20% alpha on dark cards, `#2A1650` at 10% alpha on the yellow card |
 | Page background | `#FFF6EA` |
-| Font | Fredoka (variable, self-hosted), heavy weight, tight letter spacing |
+| Font | Fredoka (variable, self-hosted), weight 500 for all card text, tight letter spacing |
 | Question size | 42px up to 24 chars, 36px up to 36 chars, 32px above, scaled down if the text would overflow |
 | Transition | slide in from the right, 380ms, `cubic-bezier(.2,.8,.2,1)`, old card moves left and scales to 95% |
 | Decor layouts | 6 layouts (circles, rings, quarters, halves, rounded squares), cycled by deck position |
@@ -139,7 +139,7 @@ Taste-critical:  yes
 Acceptance criteria:
 - [ ] typecheck, lint, build, tests pass
 - [ ] 30 to 40 groups: at least 20 pairs, 3 to 6 trios, 4 to 6 singles
-- [ ] all examples from Manuel's brief are in the deck (food likes and dislikes, favourite animal and disliked animal, music, coffee or tea, age, felt age, shoe size in the number trio, last holiday and dream destination, why are you here, sweets liked and disliked)
+- [ ] all examples from Manuel's brief are in the deck (food likes and dislikes, favourite animal and disliked animal, music, age, felt age, shoe size in the number trio, last holiday and dream destination, why are you here, sweets liked and disliked). Coffee or tea and "Was machst du beruflich?" were removed on Manuel's request after the Phase 1 review (D-031)
 - [ ] tests enforce the content rules from 3.1 (length, duplicates, ends with "?", every group has 1 to 3 questions, unique ids)
 - [ ] a test scans for excluded-topic keywords (politics, party, election, relationship status, single, married, weight, kilo, fat, thin, figure, religion, salary, income) and fails on a hit
 - [ ] tone: light, suited for adults who barely know each other. Decision logged with a note on how groups were chosen

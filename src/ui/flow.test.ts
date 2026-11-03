@@ -61,8 +61,8 @@ describe('announcement', () => {
   it('is empty for the start card and German for the others', () => {
     expect(announcement({ kind: 'start' })).toBe('');
     expect(
-      announcement({ kind: 'question', text: 'Kaffee oder Tee?', position: 2, total: 68 }),
-    ).toBe('Frage 3 von 68: Kaffee oder Tee?');
+      announcement({ kind: 'question', text: 'Lieblingsfarbe?', position: 2, total: 66 }),
+    ).toBe('Frage 3 von 66: Lieblingsfarbe?');
     expect(announcement({ kind: 'end' })).toContain('Deck durch');
   });
 });

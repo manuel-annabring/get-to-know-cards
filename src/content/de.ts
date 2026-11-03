@@ -59,8 +59,8 @@ export const groups: QuestionGroup[] = [
     questions: ['Welchen Sport machst du gerne?', 'Welchen Sport findest du langweilig?'],
   },
   {
-    id: 'jobs',
-    questions: ['Was wolltest du als Kind werden?', 'Was machst du beruflich?'],
+    id: 'childhood-job',
+    questions: ['Was wolltest du als Kind werden?'],
   },
   {
     id: 'school-subjects',
@@ -158,10 +158,6 @@ export const groups: QuestionGroup[] = [
   {
     id: 'why-here',
     questions: ['Warum bist du gerade hier?'],
-  },
-  {
-    id: 'coffee-or-tea',
-    questions: ['Was trinkst du lieber, Kaffee oder Tee?'],
   },
   {
     id: 'sea-or-mountains',

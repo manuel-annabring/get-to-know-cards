@@ -1,8 +1,8 @@
 # Status
 
-Current phase: Phase 1, Playable deck (all slices done, waiting for Manuel's review)
+Current phase: Phase 1, Playable deck (all slices done, review fixes applied)
 Branch: phase/1-playable-deck
-Next action: Manuel reviews REVIEW-phase-1.md, then a small fix slice for the agreed items, then merge `phase/1-playable-deck` into `main`, then detail Phase 2 in SPEC.md
+Next action: Phase 2 kickoff
 
 | Slice | Name | Status | Commit |
 |---|---|---|---|
@@ -11,6 +11,7 @@ Next action: Manuel reviews REVIEW-phase-1.md, then a small fix slice for the ag
 | 1.2 | Deck engine | done | 2eab9ce |
 | 1.3 | Content v1 | done | e339056 |
 | 1.4 | Wire-up and interaction | done | ad4b500 |
+| 1.5 | Review fixes (font weight, two questions) | done | HASH |
 
 ## Blockers
 

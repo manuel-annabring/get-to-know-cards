@@ -124,6 +124,8 @@ body {
 
 .card__title {
   margin: 0;
+  /* h1 defaults to bold; the weight comes from theme.ts. */
+  font-weight: inherit;
   font-size: calc(var(--start-title-size) * var(--u));
 }
 

@@ -31,7 +31,8 @@ export const pageBackground = '#FFF6EA';
 export const font = {
   /** Family name registered by `@fontsource-variable/fredoka`. */
   family: "'Fredoka Variable', system-ui, sans-serif",
-  weight: 700,
+  /** One weight for all card text, so a change is one number. */
+  weight: 500,
   letterSpacing: '-0.01em',
   lineHeight: 1.12,
 } as const;

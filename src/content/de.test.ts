@@ -104,6 +104,11 @@ describe('German content: question rules', () => {
     expect(new Set(lower).size).toBe(lower.length);
   });
 
+  it('keeps the questions Manuel removed after the Phase 1 review out of the deck', () => {
+    expect(questions).not.toContain('Was trinkst du lieber, Kaffee oder Tee?');
+    expect(questions).not.toContain('Was machst du beruflich?');
+  });
+
   it('has no empty or padded questions', () => {
     for (const question of questions) expect(question, question).toBe(question.trim());
     for (const question of questions) expect(question.length, question).toBeGreaterThan(1);
